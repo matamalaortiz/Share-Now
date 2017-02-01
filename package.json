@@ -1,0 +1,17 @@
+{
+  "name": "share",
+  "version": "0.0.1",
+  "description": "a small tool to share images via webrtc",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Alejandro Matamala @matamalaortiz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "nodemon": "^1.11.0",
+    "socket.io": "^1.5.1"
+  }
+}
