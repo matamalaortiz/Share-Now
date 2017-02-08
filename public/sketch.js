@@ -1,6 +1,7 @@
 var dropzone;
 var socket;
 
+
 function setup() {
     createCanvas(100, 100);
 
@@ -12,11 +13,32 @@ function setup() {
     // Listen Sockets
     socket = io.connect();
 
+
     // Receving IMG from Server
     socket.on('img_from_server', newImg);
 
     function newImg(data) {
         var img = createImg(data.img);
+    }
+
+    // Receive User ID from server
+
+    socket.on('uid_from_server', userUid);
+
+
+    function userUid(data){
+      var user = data;
+      console.log(user);
+
+
+      currentUsers = user;
+
+      if (currentUsers ===  1 ) {
+        document.getElementById('clients').innerHTML = 'You are alone in the room. :(';
+      } else {
+        document.getElementById('clients').innerHTML = 'We are ' + user + ' users in the room.';
+
+      }
     }
 
 }
@@ -26,6 +48,7 @@ function gotFile(file) {
         img: file.data,
     }
 
+// Send to server
     socket.emit('dropped_img', data)
 
     var img = createImg(file.data);

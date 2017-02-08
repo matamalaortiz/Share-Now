@@ -25,6 +25,22 @@ p#dropzone{
   position: fixed;
 }
 
+p#clients {
+  position: fixed;
+  padding: 47px;
+  border-bottom: 9px solid white;
+  color: black;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: -webkit-left;
+  font-size: 12px;
+  line-height: 18px;
+  font-family: monospace;
+  width: 100%;
+  height: 100000%;
+  margin-top: 0%;
+  left: 82%;
+}
+
 img {
     max-width: 80vw;
     max-height: auto;
